@@ -1,0 +1,298 @@
+body{
+    background-image: url(imagem/fundovideo.png);
+    background-repeat:no-repeat;
+}
+
+
+#trailer{
+    position: relative;
+    left:315px;
+    top:60px;
+    width:68vw;
+
+}
+
+.faixa{
+    position: relative;
+    top: -575px;
+
+}
+
+.acao{
+   position: relative;
+   cursor: pointer;
+   left:-290px;
+   top:-700px;
+}
+
+.retroceder{
+    position: relative;
+    left: 200px;
+}
+
+.sommenu{
+    position:relative;
+    top: -320px;
+    margin-left: 5px;
+    cursor:pointer;
+}
+
+.divcatalogo{
+    background-image: url(imagem/fundomenu.jpeg);
+    background-repeat:no-repeat;
+    width: 100vw;
+    height: 100vw;
+}
+
+.avancar{
+    position: relative;
+    top: -340px;
+    left: 610px;
+    cursor: pointer;
+}
+
+.catalogo1{
+    position: relative;
+    margin: 20px;
+    top: 220px;
+    left: -78px;
+}
+.divsobrenos{
+    background-image: url(imagem/fundovideo.png);
+    background-repeat:no-repeat;
+    width: 100vw;
+    height: 100vw;
+}
+
+.titulosobrenos{
+    font-size: 48px;
+    font-weight:bold;
+    color: white;
+    top: -230px;
+    position: relative;
+    text-align: center;
+    left: -50px;
+}
+
+.ficha1{
+    position: relative;
+    top: 295px;
+    left: 1175px;
+    cursor: pointer;
+}
+
+.butaohover{
+    position: relative;
+    top: 200px;
+    left: -388px;
+    cursor: pointer;
+}
+
+.butaohover2{
+    position: relative;
+    top: 200px;
+    left: -578px;
+    cursor: pointer;
+}
+
+.butaohover3{
+    position: relative;
+    top: -195px;
+    left: 590px;
+    cursor: pointer;
+}
+
+.carolina{
+    margin-bottom: 5px;
+    position: relative;
+    left: 50px;
+    top: 350px;
+}
+
+.carolinavideo{
+    position: relative;
+    left: 23px;
+    top: -250px;
+    width: 400px;
+    height: 484px;
+    
+}
+.catarina{
+    margin-bottom: 5px;
+    position: relative;
+    left: 200px;
+    top: 350px;
+}
+
+.catarinavideo{
+    position: relative;
+    left: 60px;
+    top:-250px;
+
+}
+
+.isabela{
+    margin-bottom: 5px;
+    position: relative;
+    left: 340px;
+    top: 350px;
+}
+
+.isabelavideo{
+    position: relative;
+    left:100px;
+    top: -250px;
+}
+
+.casinha{
+    position: relative;
+    top: -150px;
+    left: 345px;
+    cursor: pointer;
+}
+.catalogo2{
+    position: relative;
+    margin: 20px;
+    top: 220px;
+    left: -268px;
+    cursor: pointer;
+}
+
+.catalogo3{
+    position: relative;
+    margin: 20px;
+    top: -175px;
+    right: -900px;
+    cursor: pointer;
+}
+
+.catalogo4{
+    position: relative;
+    margin: 20px;
+    top: 220px;
+    left: -13px;
+}
+
+.butaohover4{
+    position: relative;
+    top: 200px;
+    left: -325px;
+    cursor: pointer;
+}
+
+.catalogo5{
+    position: relative;
+    margin: 20px;
+    top: 220px;
+    left: -200px;
+}
+
+.butaohover5{
+    position: relative;
+    top: 200px;
+    left: -510px;
+    cursor: pointer;
+}
+
+.catalogo6{
+    position: relative;
+    margin: 20px;
+    top: -175px;
+    right: -900px;
+    cursor: pointer;
+}
+
+.butaohover6{
+    position: relative;
+    top: -195px;
+    left: 590px;
+    cursor: pointer;
+}
+
+.ficha2{
+    position: relative;
+    top: -100px;
+    left: 560px;
+    cursor: pointer;
+}
+
+.retroceder{
+    position: relative;
+    left: -610px;
+    top:-340px;
+    cursor: pointer;
+}
+
+.casa{
+    position: absolute;
+    left: 50px;
+    margin: 10px;
+    top:10px;
+    cursor: pointer;
+}
+
+
+.divvideo1{
+    background-image: url(imagem/fundo.png);
+    background-repeat:no-repeat;
+    width: 100vw;
+    height: 100vw;   
+}
+
+.cinema{
+    position: relative;
+    left:200px;
+    top: 70px;
+}
+
+.entrevista{
+    position: relative;
+    left: 200px;
+    top:70px;
+}
+
+.pessoal{
+    position: relative;
+    left:200px;
+    top: 70px;
+}
+
+.social{
+    position: relative;
+    left:200px;
+    top: 70px;
+}
+
+.bloopers{
+    position: relative;
+    left:200px;
+    top: 70px;
+}
+
+.divvideo2{
+    background-image: url(imagem/fundo.png);
+    background-repeat:no-repeat;
+    width: 100vw;
+    height: 100vw;   
+}
+
+.divvideo3{
+    background-image: url(imagem/fundo.png);
+    background-repeat:no-repeat;
+    width: 100vw;
+    height: 100vw;   
+}
+
+.divvideo4{
+    background-image: url(imagem/fundo.png);
+    background-repeat:no-repeat;
+    width: 100vw;
+    height: 100vw;   
+}
+
+.divvideo5{
+    background-image: url(imagem/fundo.png);
+    background-repeat:no-repeat;
+    width: 100vw;
+    height: 100vw;   
+}

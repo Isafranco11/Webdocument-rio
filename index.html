@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Sem Legendas</title>
+            <meta charset="UTF-8" />
+            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+            <script src="https://code.createjs.com/1.0.0/soundjs.min.js"></script>
+
+            <link href="https://vjs.zencdn.net/7.4.1/video-js.css" rel="stylesheet" >
+            <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500&family=Vibes&display=swap" rel="stylesheet" />
+            <link rel="stylesheet" type="text/css" href="style.css" />
+
+     </head>
+     <body>
+         <!--Abertura do site - video + apresentacao.-->
+
+        <video id="trailer" autoplay loop controls>
+            <source src="trailerminiatura.mp4"  type="video/mp4">
+        </video> 
+
+        <video id = "carolinavideo" autoplay loop  controls>
+            <source src = "carolinavideo.mp4" type="video/mp4">
+        </video>
+
+        <video id = "catarinavideo" autoplay loop controls>
+          <source src = "catarinavideo.mp4" type="video/mp4">
+        </video>
+
+        <video id="isabelavideo" autoplay loop controls>
+          <source src="isabelavideo.mp4" type="video/mp4">
+        </video>
+
+        <iframe id="entrevista" width="1000" height="561" src="https://www.youtube.com/embed/2q1ZQX1BTt0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe id="cinema" width="1000" height="561" src="https://www.youtube.com/embed/BzLq13JVO5g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe id="pessoal" width="1000" height="561" src="https://www.youtube.com/embed/Y0--SpJ0hno" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe id="social"  width="1000" height="561" src="https://www.youtube.com/embed/6BA4aINpP20" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe id="bloopers" width="1000" height="561" src="https://www.youtube.com/embed/C9c7TXAj5oA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+        <audio id="claquete">
+            <source src="claquete.mp3"> </source>
+        </audio>
+
+        <audio id="Somenu">
+          <source src="Sommenu.mp3"> </source>
+      </audio>
+
+    <script>
+
+        var trailer = document.getElementById("trailer");
+        trailer.id = "trailer";
+        trailer.className = "trailer";
+
+        var principal = document.createElement("DIV");
+        principal.id = "principal";
+        principal.className = "principal";
+        document.body.appendChild(principal);
+
+        var divtrailer = document.createElement("DIV");
+        divtrailer.id = "divtrailer";
+        divtrailer.className = "divtrailer";
+        principal.appendChild(divtrailer);
+
+        var faixa = document.createElement("IMG");
+        faixa.src = "imagem/faixa.JPEG";
+        faixa.id = "faixa";
+        faixa.className= "faixa";
+        
+        var acao = document.createElement("IMG");
+        acao.src = "imagem/play1.png";
+        acao.id = "acao";
+        acao.className = "acao";
+        acao.addEventListener("click",Botaoacao);
+        acao.addEventListener("mouseover",som);
+        
+        var tempobotaoacao;
+
+      tempobotaoacao = window.setTimeout(aparecebotaoinicio, 11000);
+
+        function aparecebotaoinicio() {
+        divtrailer.appendChild(faixa);
+        divtrailer.appendChild(acao);
+        
+        var fadeininicial;
+        fadeininicial = window.setInterval(inicialfadein, 20);
+
+
+        function inicialfadein() {
+          let opacity = Number(faixa.style.opacity);
+          if (opacity < 1) {
+            opacity = opacity + 0.01;
+
+            faixa.style.opacity = opacity;
+          } else {
+            window.clearInterval(fadeininicial);
+          }
+        }
+        var fadeininicial2;
+        fadeininicial2 = window.setInterval(inicialfadein2, 20);
+
+
+        function inicialfadein2() {
+          let opacity = Number(acao.style.opacity);
+          if (opacity < 1) {
+            opacity = opacity + 0.01;
+
+            acao.style.opacity = opacity;
+          } else {
+            window.clearInterval(fadeininicial2);
+          }
+        }
+        }
+
+    var sombotao = document.getElementById("claquete");
+      function som() {
+      sombotao.play();}
+
+        function Botaoacao(){
+          principal.removeChild(divtrailer);
+          document.body.removeChild(trailer);
+          principal.appendChild(divcatalogo);
+        }
+
+        var divcatalogo = document.createElement("DIV");
+        divcatalogo.id = "divcatalogo";
+        divcatalogo.className = "divcatalogo";
+
+    
+        var sommenu = document.createElement("IMG");
+        sommenu.src = "imagem/somplayer1.png";
+        sommenu.id = "sommenu";
+        sommenu.className = "sommenu";
+        sommenu.addEventListener("click",Som1);
+        divcatalogo.appendChild(sommenu);
+
+        var sombotao1 = document.getElementById("Somenu");
+
+            function Som1() {
+            sombotao1.play();
+          }
+
+        var catalogo1 = document.createElement("IMG");
+        catalogo1.src = "imagem/evolucao.jpg";
+        catalogo1.id = "catalogo1";
+        catalogo1.className = "catalogo1";
+        divcatalogo.appendChild(catalogo1);
+        
+        
+        
+
+    var butaohover = document.createElement("IMG");
+      butaohover.src = "imagem/sinopse1.jpg";
+      butaohover.id = "butaohover";
+      butaohover.className = "butaohover";
+      butaohover.style.opacity = "0.0";
+     divcatalogo.appendChild(butaohover);
+      butaohover.addEventListener("mouseover",BotaoFadeIn);
+      butaohover.addEventListener("mouseout",BotaoFadeOut);
+      butaohover.addEventListener("click", video1);
+
+      function BotaoFadeIn() {
+      butaohover.style.opacity="1.0";
+      catalogo1.style.opacity="0.0";
+
+        }
+
+      function BotaoFadeOut() {
+      butaohover.style.opacity="0.0";
+      catalogo1.style.opacity="1.0";
+    }
+
+    function video1(){
+        principal.removeChild(divcatalogo);
+        principal.appendChild(divvideo1);
+
+    }
+
+    var divvideo1 = document.createElement ("DIV");
+        divvideo1.id = "divvideo1";
+        divvideo1.className = "divvideo1";
+
+
+        var video1 = document.getElementById("cinema");
+        video1.id = "cinema";
+        video1.className = "cinema";
+        divvideo1.appendChild(video1);
+
+        var ficha1 = document.createElement("IMG");
+        ficha1.src = "imagem/ficha.png";
+        ficha1.id = "ficha1";
+        ficha1.className = "ficha1";
+        divcatalogo.appendChild(ficha1);
+        ficha1.addEventListener("click",sobrenos);
+
+        function sobrenos(){
+           principal.removeChild(divcatalogo);
+           principal.appendChild(divsobrenos);
+
+           var tempo;
+
+            tempo = window.setInterval(fadeincadeiras, 10);
+
+
+      function fadeincadeiras() {
+        let opacity = Number(carolina.style.opacity);
+        if (opacity < 1) {
+          opacity = opacity + 0.01;
+
+          carolina.style.opacity = opacity;
+        } else {
+          window.clearInterval(tempo);
+
+          tempo = window.setInterval(fadeincadeiras2, 10);
+        }
+      }
+
+      function fadeincadeiras2() {
+        let opacity = Number(catarina.style.opacity);
+        if (opacity < 1) {
+          opacity = opacity + 0.01;
+
+          catarina.style.opacity = opacity;
+        } else {
+          window.clearInterval(tempo);
+          tempo = window.setInterval(fadeincadeiras3, 10);
+        }
+      }
+
+      function fadeincadeiras3() {
+        let opacity = Number(isabela.style.opacity);
+        if (opacity < 1) {
+          opacity = opacity + 0.01;
+
+          isabela.style.opacity = opacity;
+        } else {
+          window.clearInterval(tempo);
+          tempo = window.setInterval(fadeincadeiras4, 10);
+
+        }
+      }
+      function fadeincadeiras4() {
+        let opacity = Number(casinha.style.opacity);
+        if (opacity < 1) {
+          opacity = opacity + 0.01;
+
+          casinha.style.opacity = opacity;
+        } else {
+          window.clearInterval(tempo);
+        }
+      }
+      
+        }
+
+        var divsobrenos = document.createElement("DIV");
+        divsobrenos.id= "divsobrenos";
+        divsobrenos.className = "divsobrenos";
+
+        var carolina = document.createElement("IMG");
+        carolina.src = "imagem/carolina.png";
+        carolina.id = "carolina";
+        carolina.className = "carolina";
+        carolina.style.opacity = "0.0";
+        divsobrenos.appendChild(carolina);
+
+
+        var catarina = document.createElement("IMG");
+        catarina.src = "imagem/catarina.png";
+        catarina.id = "catarina";
+        catarina.className = "catarina";
+        catarina.style.opacity = "0.0";
+        divsobrenos.appendChild(catarina);
+
+        var isabela = document.createElement("IMG");
+        isabela.src = "imagem/isabela.png";
+        isabela.id = "isabela";
+        isabela.className = "isabela";
+        isabela.style.opacity = "0.0";
+        divsobrenos.appendChild(isabela);
+
+        var casinha = document.createElement("IMG");
+        casinha.src = "imagem/casa.png";
+        casinha.id = "casinha";
+        casinha.className = "casinha";
+        casinha.style.opacity = "0.0";
+        casinha.addEventListener("click",catalogovoltar);
+        divsobrenos.appendChild(casinha);
+
+        function catalogovoltar() {
+            principal.removeChild(divsobrenos);
+            principal.appendChild(divcatalogo);
+        }
+
+    var titulo = document.createElement("H1");
+    titulo.className = "titulosobrenos";
+    titulo.id = "titulosobrenos";
+    titulo.innerHTML = "Ficha Técnica";
+    divsobrenos.appendChild(titulo);
+
+      var carolinavideo = document.getElementById("carolinavideo");
+      carolinavideo.id = "carolinavideo";
+      carolinavideo.className = "carolinavideo";
+      carolinavideo.style.opacity = "0.0";
+     divsobrenos.appendChild(carolinavideo);
+      carolinavideo.addEventListener("mouseover",CarolinaFadeIn);
+      carolinavideo.addEventListener("mouseout",CarolinaFadeOut);
+
+
+      function CarolinaFadeIn() {
+      carolinavideo.style.opacity="1.0";
+      carolina.style.opacity="0.0";
+
+        }
+
+      function CarolinaFadeOut() {
+    carolinavideo.style.opacity="0.0";
+      carolina.style.opacity="1.0";
+    }
+
+    var catarinavideo = document.getElementById("catarinavideo");
+      catarinavideo.id = "catarinavideo";
+      catarinavideo.className = "catarinavideo";
+      catarinavideo.style.opacity = "0.0";
+     divsobrenos.appendChild(catarinavideo);
+      catarinavideo.addEventListener("mouseover",CatarinaFadeIn);
+      catarinavideo.addEventListener("mouseout",CatarinaFadeOut);
+
+
+      function CatarinaFadeIn() {
+      catarinavideo.style.opacity="1.0";
+      catarina.style.opacity="0.0";
+
+        }
+
+      function CatarinaFadeOut() {
+      catarinavideo.style.opacity="0.0";
+      catarina.style.opacity="1.0";
+    }
+
+    var isabelavideo = document.getElementById("isabelavideo");
+    isabelavideo.id = "isabelavideo";
+    isabelavideo.className = "isabelavideo";
+    isabelavideo.style.opacity = "0.0";
+     divsobrenos.appendChild(isabelavideo);
+     isabelavideo.addEventListener("mouseover",IsabelaFadeIn);
+     isabelavideo.addEventListener("mouseout",IsabelaFadeOut);
+
+
+      function IsabelaFadeIn() {
+      isabelavideo.style.opacity="1.0";
+      isabela.style.opacity="0.0";
+
+        }
+
+      function IsabelaFadeOut() {
+      isabelavideo.style.opacity="0.0";
+      isabela.style.opacity="1.0";
+    }
+
+    var catalogo2 = document.createElement("IMG");
+        catalogo2.src = "imagem/mundo.jpg";
+        catalogo2.id = "catalogo2";
+        catalogo2.className = "catalogo2";
+        divcatalogo.appendChild(catalogo2);
+
+
+    var butaohover2 = document.createElement("IMG");
+      butaohover2.src = "imagem/sinopse2.jpg";
+      butaohover2.id = "butaohover2";
+      butaohover2.className = "butaohover2";
+      butaohover2.style.opacity = "1.0";
+      divcatalogo.appendChild(butaohover2);
+      butaohover2.addEventListener("mouseover",BotaoFadeIn2);
+      butaohover2.addEventListener("mouseout",BotaoFadeOut2);
+      butaohover2.addEventListener("click", Video2);
+
+      function BotaoFadeIn2() {
+      butaohover2.style.opacity="1.0";
+      catalogo2.style.opacity="0.0";
+
+        }
+
+      function BotaoFadeOut2() {
+      butaohover2.style.opacity="0.0";
+      catalogo2.style.opacity="1.0";
+
+      }
+        function Video2(){
+        principal.removeChild(divcatalogo);
+        principal.appendChild(divvideo2);
+
+    }
+
+        var divvideo2 = document.createElement ("DIV");
+        divvideo2.id = "divvideo2";
+        divvideo2.className = "divvideo2";
+
+
+        var video2= document.getElementById("entrevista");
+        video2.id = "entrevista";
+        video2.className = "entrevista";
+        divvideo2.appendChild(video2);
+        
+
+        var catalogo3 = document.createElement("IMG");
+        catalogo3.src = "imagem/Cartazes.jpg";
+        catalogo3.id = "catalogo3";
+        catalogo3.className = "catalogo3";
+        divcatalogo.appendChild(catalogo3);
+
+        var butaohover3 = document.createElement("IMG");
+      butaohover3.src = "imagem/sinopse3.jpg";
+      butaohover3.id = "butaohover3";
+      butaohover3.className = "butaohover3";
+      butaohover3.style.opacity = "1.0";
+      divcatalogo.appendChild(butaohover3);
+      butaohover3.addEventListener("mouseover",BotaoFadeIn3);
+      butaohover3.addEventListener("mouseout",BotaoFadeOut3);
+      butaohover3.addEventListener("click", Video3);
+
+      function BotaoFadeIn3() {
+      butaohover3.style.opacity="1.0";
+      catalogo3.style.opacity="0.0";
+
+        }
+
+      function BotaoFadeOut3() {
+      butaohover3.style.opacity="0.0";
+      catalogo3.style.opacity="1.0";
+
+      }
+
+      var avancar = document.createElement ("IMG");
+        avancar.src = "imagem/avancar.png";
+        avancar.id = "avancar";
+        avancar.className ="avancar";
+        avancar.addEventListener("mouseover", Mudarpagina);
+        divcatalogo.appendChild(avancar);
+        
+        var catalogo4 = document.createElement("IMG");
+        catalogo4.src = "imagem/Cartazes.jpg";
+        catalogo4.id = "catalogo4";
+        catalogo4.className = "catalogo4";
+
+        var butaohover4 = document.createElement("IMG");
+      butaohover4.src = "imagem/sinopse3.jpg";
+      butaohover4.id = "butaohover4";
+      butaohover4.className = "butaohover4";
+      butaohover4.style.opacity = "1.0";
+      butaohover4.addEventListener("mouseover",BotaoFadeIn4);
+      butaohover4.addEventListener("mouseout",BotaoFadeOut4);
+      butaohover4.addEventListener("click", Video3);
+
+      function BotaoFadeIn4() {
+      butaohover4.style.opacity="1.0";
+      catalogo4.style.opacity="0.0";
+
+        }
+
+      function BotaoFadeOut4() {
+      butaohover4.style.opacity="0.0";
+      catalogo4.style.opacity="1.0";
+
+      }
+
+      var catalogo5 = document.createElement("IMG");
+        catalogo5.src = "imagem/social.jpeg";
+        catalogo5.id = "catalogo5";
+        catalogo5.className = "catalogo5";
+
+      var butaohover5 = document.createElement("IMG");
+      butaohover5.src = "imagem/sinopse4.jpg";
+      butaohover5.id = "butaohover5";
+      butaohover5.className = "butaohover5";
+      butaohover5.style.opacity = "1.0";
+      butaohover5.addEventListener("mouseover",BotaoFadeIn5);
+      butaohover5.addEventListener("mouseout",BotaoFadeOut5);
+      butaohover5.addEventListener("click", Video4);
+
+      //Botão click Video4
+      var divvideo4 = document.createElement ("DIV");
+        divvideo4.id = "divvideo4";
+        divvideo4.className = "divvideo4";
+
+        var video4= document.getElementById("social");
+       video4.id = "social";
+       video4.className = "social";
+        divvideo4.appendChild(video4);
+ 
+        function Video4(){
+        principal.removeChild(divcatalogo);
+        principal.appendChild(divvideo4);
+    }
+
+      function BotaoFadeIn5() {
+      butaohover5.style.opacity="1.0";
+      catalogo5.style.opacity="0.0";
+
+        }
+
+      function BotaoFadeOut5() {
+      butaohover5.style.opacity="0.0";
+      catalogo5.style.opacity="1.0";
+
+      }
+
+      var catalogo6 = document.createElement("IMG");
+        catalogo6.src = "imagem/falhas.jpg";
+        catalogo6.id = "catalogo6";
+        catalogo6.className = "catalogo6";
+
+      var butaohover6 = document.createElement("IMG");
+      butaohover6.src = "imagem/sinopse5.jpg";
+      butaohover6.id = "butaohover6";
+      butaohover6.className = "butaohover6";
+      butaohover6.style.opacity = "1.0";
+      butaohover6.addEventListener("mouseover",BotaoFadeIn6);
+      butaohover6.addEventListener("mouseout",BotaoFadeOut6);
+      butaohover6.addEventListener("click", Video5);
+
+      //Botão click Video5
+      var divvideo5 = document.createElement ("DIV");
+        divvideo5.id = "divvideo5";
+        divvideo5.className = "divvideo5";
+
+
+        var video5= document.getElementById("bloopers");
+       video5.id = "bloopers";
+       video5.className = "bloopers";
+        divvideo5.appendChild(video5);
+ 
+        function Video5(){
+        principal.removeChild(divcatalogo);
+        principal.appendChild(divvideo5);
+    }
+
+      function BotaoFadeIn6() {
+      butaohover6.style.opacity="1.0";
+      catalogo6.style.opacity="0.0"
+        }
+
+      function BotaoFadeOut6() {
+      butaohover6.style.opacity="0.0";
+      catalogo6.style.opacity="1.0";
+      }
+
+      var ficha2 = document.createElement("IMG");
+        ficha2.src = "imagem/ficha.png";
+        ficha2.id = "ficha2";
+        ficha2.className = "ficha2";
+        ficha2.addEventListener("click", sobrenos);
+
+      var retroceder = document.createElement("IMG");
+      retroceder.src = "imagem/retroceder.png";
+      retroceder.id = "retroceder";
+      retroceder.className ="retroceder";
+      retroceder.addEventListener("mouseover", Mudarpagina2);
+
+      function Mudarpagina(){
+        divcatalogo.removeChild(ficha1);
+        divcatalogo.removeChild(catalogo1);
+        divcatalogo.removeChild(butaohover);
+        divcatalogo.removeChild(catalogo2);
+        divcatalogo.removeChild(butaohover2);
+        divcatalogo.removeChild(catalogo3);
+        divcatalogo.removeChild(butaohover3)
+        divcatalogo.removeChild(avancar);
+        divcatalogo.appendChild(catalogo4);
+        divcatalogo.appendChild(butaohover4);
+        divcatalogo.appendChild(catalogo5);
+        divcatalogo.appendChild(butaohover5);
+        divcatalogo.appendChild(catalogo6);
+        divcatalogo.appendChild(butaohover6);
+        divcatalogo.appendChild(retroceder);
+        divcatalogo.appendChild(ficha2);
+      }
+
+      function Mudarpagina2(){
+        divcatalogo.removeChild(catalogo4);
+        divcatalogo.removeChild(butaohover4);
+        divcatalogo.removeChild(catalogo5);
+        divcatalogo.removeChild(butaohover5);
+        divcatalogo.removeChild(catalogo6);
+        divcatalogo.removeChild(butaohover6);
+        divcatalogo.removeChild(retroceder);
+        divcatalogo.removeChild(ficha2);
+        divcatalogo.appendChild(ficha1);
+        divcatalogo.appendChild(catalogo1);
+        divcatalogo.appendChild(butaohover);
+        divcatalogo.appendChild(catalogo2);
+        divcatalogo.appendChild(butaohover2);
+        divcatalogo.appendChild(catalogo3);
+        divcatalogo.appendChild(butaohover3)
+        divcatalogo.appendChild(avancar);
+      }
+
+
+        // Está relacionado com o botão click Video3
+        function Video3 (){
+            principal.removeChild(divcatalogo);
+            principal.appendChild(divvideo3);
+        }
+
+        var divvideo3 = document.createElement ("DIV");
+        divvideo3.id = "divvideo3";
+        divvideo3.className = "divvideo3";
+
+
+        var video3= document.getElementById("pessoal");
+        video3.id = "pessoal";
+        video3.className = "pessoal";
+        divvideo3.appendChild(video3);
+
+        // casa volta para os catálogos
+        var casa = document.createElement("IMG");
+        casa.src = "imagem/casa.png";
+        casa.id ="casa";
+        casa.className = "casa";
+        casa.addEventListener("click", Voltar1);
+        divvideo1.appendChild(casa);
+        
+
+        function Voltar1(){
+            principal.removeChild(divvideo1);
+            principal.appendChild(divcatalogo);
+        }
+
+        var casa2 = document.createElement("IMG");
+        casa2.src = "imagem/casa.png";
+        casa2.id ="casa";
+        casa2.className = "casa";
+        casa2.addEventListener("click",Voltar2);
+        divvideo2.appendChild(casa2);
+        
+
+        function Voltar2(){
+            principal.removeChild(divvideo2);
+            principal.appendChild(divcatalogo);
+        }
+
+        var casa3 = document.createElement("IMG");
+        casa3.src = "imagem/casa.png";
+        casa3.id ="casa";
+        casa3.className = "casa";
+        casa3.addEventListener("click", Voltar3);
+        divvideo3.appendChild(casa3);
+        
+
+        function Voltar3(){
+            principal.removeChild(divvideo3);
+            principal.appendChild(divcatalogo);
+        }
+       
+        var casa4 = document.createElement("IMG");
+        casa4.src = "imagem/casa.png";
+        casa4.id ="casa";
+        casa4.className = "casa";
+        casa4.addEventListener("click", Voltar4);
+        divvideo4.appendChild(casa4);
+        
+
+        function Voltar4(){
+            principal.removeChild(divvideo4);
+            principal.appendChild(divcatalogo);
+        }
+
+        var casa5 = document.createElement("IMG");
+        casa5.src = "imagem/casa.png";
+        casa5.id ="casa";
+        casa5.className = "casa";
+        casa5.addEventListener("click", Voltar5);
+        divvideo5.appendChild(casa5);
+        
+
+        function Voltar5(){
+            principal.removeChild(divvideo5);
+            principal.appendChild(divcatalogo);
+        }
+        </script>
+
+     </body>
+     </html>
+
